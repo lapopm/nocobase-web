@@ -8,7 +8,7 @@
  */
 
 import { css } from '@emotion/css';
-import { Space, Tabs } from 'antd';
+import { Divider, Space, Tabs } from 'antd';
 import React, { createElement, useContext } from 'react';
 import { useCurrentDocumentTitle, usePlugin, useViewport } from '@nocobase/client';
 import AuthPlugin, { AuthOptions } from '..';
@@ -92,6 +92,7 @@ export const SignInPage = () => {
       ) : (
         <></>
       )}
+      {tabs.length && signInButtons.length ? <Divider plain>{t('Or')}</Divider> : null}
       <Space
         direction="vertical"
         className={css`
